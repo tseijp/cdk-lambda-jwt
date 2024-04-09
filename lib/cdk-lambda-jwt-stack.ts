@@ -3,9 +3,9 @@ import { Construct } from "constructs";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as apigw from "aws-cdk-lib/aws-apigateway";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
- import * as dotenv from "dotenv";
+import * as dotenv from "dotenv";
 
- dotenv.config()
+dotenv.config()
 
 export class CdkLambdaJwtStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
