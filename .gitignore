@@ -6,3 +6,11 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+### my created
+
+yarn.lock
+package-lock.json
+*.pem
+.env*
+!.env.example
