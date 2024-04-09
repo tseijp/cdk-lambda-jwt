@@ -1,31 +1,39 @@
-# getting started
+# cdk-lambda-jwt
 
-## version
+# jwt lambda server for jitsi
 
-- aws-cdk: latest
-- aws-cli: latest
-- hono: latest
-- node: latest
+This repository contains the setup a server-side jwt token solution to JaaS WebRTC issue, deployed on AWS Lambda.
+Due to JaaS's use of iframes, appId visibility posed a risk of large billing to client, necessitating this JWT token approach for enhanced security.
+This server enhances security for JaaS WebRTC sessions by using jwt token, mitigating the risk of unauthorized access.
+Today I made this since no action was taken until ten days before the deadline despite of warnings from last year and BE threw task to another piyopiyo FE member.
 
-## setup
+## Technologies Used
 
-```ruby
-mkdir cdk-lambda-jwt
-cd cdk-lambda-jwt
-cdk init app -l typescript
-yarn add hono
-mkdir lambda
-# edit lambda/index.ts
-# edit lib/cdk-lambda-jwt-stack.ts
+- **AWS Lambda**: Chosen for deployment, offering scalability and integration with AWS services.
+- **AWS-CDK**: A modern infrastructure as code tool that allows defining AWS resources programmatically.
+- **Hono**: An exceptional framework for server-side applications, facilitating easy JWT token issuance and deployment.
+
+## Pre-requisites
+
+Before proceeding, ensure the following tools are installed and configured:
+
+1. **AWS-CLI and AWS-CDK**: Tools for interacting with and programming AWS resources.
+2. **Docker Desktop**: Necessary for packaging and deploying applications.
+3. **Login to AWS**: Required for deploying resources through the command line.
+
+```bash
+aws configure sso
+aws sso login --profile sso-xxx-your-profile
 ```
 
-## deploy to lambda
+## Setup Guide
 
-- install aws-cli and aws-cdk
-- install and open docker desktop
-- login aws for command prompt
-  - `aws configure sso`
-  - `aws sso login --profile sso-xxx-your-profile`
+This section describes the steps to create and deploy the JWT token server using AWS-CDK and Hono.
+
+1. **Initialize the Project**: Set up a new directory and initialize a CDK application.
+2. **Add Hono**: Integrate Hono for creating the server logic.
+3. **Configure AWS-CDK**: Define the AWS resources, including the Lambda function.
+4. **Deploy**: Use AWS-CDK to deploy your server to AWS Lambda.
 
 ```ruby
 mkdir cdk-lambda-jwt
